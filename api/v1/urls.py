@@ -1,8 +1,12 @@
-from django.urls import path
+import uuid
 
-from api.v1 import views
+from django.urls import path, re_path
+
+from api.v1.views import VehicleResource
+from api.v1.views import VehicleEndpoint
 
 urlpatterns = [
-    path('qr/', views.CarView.as_view()),
-    path('test/', views.index, name='index'),
+    path('vehicle/<uuid>', VehicleResource.as_view()),
+    path('vehicle', VehicleEndpoint.as_view()),
 ]
+
