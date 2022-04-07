@@ -15,41 +15,34 @@ class VehicleResource(APIView):
     @staticmethod
     def get(request: Request, uuid: UUID) -> Response(dict):
         """Get one car instance by UUID"""
-        vehicle = Vehicle.objects.filter(id=uuid)
-        if not vehicle:
+        vehicle_raw = Vehicle.find_by_id(id=uuid)
+        if not vehicle_raw:
             return HttpResponseNotFound('Car with this UUID is not found')
         response = {
-            'data': VehicleSerializer(list(vehicle)[0], many=False).data,
+            'data': Vehicle.serialize(vehicle_raw, False),
             'metadata': {
                 'uuid': uuid,
             }
         }
-
         return Response(response)
 
     @staticmethod
     def patch(request: Request, uuid: UUID) -> Response(dict):
         """Update car instance with new data"""
 
-        vehicle = list(Vehicle.objects.filter(id=uuid))[0]
-        if not vehicle:
+        vehicle_raw = Vehicle.find_by_id(id=uuid)
+        if not vehicle_raw:
             return HttpResponseNotFound('Car with this UUID is not found')
 
-        vehicle.update_fields(
-            obj=vehicle,
-            request=request,
-        )
-        vehicle.save()
+        vehicle_raw.update_fields(vehicle_raw, request)
+        vehicle_raw.save()
 
         response = {
-            'data': VehicleSerializer(vehicle, many=False).data,
+            'data': Vehicle.serialize(vehicle_raw, False),
             'metadata': {
                 'uuid': uuid,
             }
         }
-
-        # TODO: patch doesn't working. Need to fix
-
         return Response(response)
 
 
@@ -59,21 +52,21 @@ class VehicleEndpoint(APIView):
     @staticmethod
     def get(request: Request):
         """Get list of available car instances"""
-        items = Vehicle.objects.all()
-        cars = VehicleSerializer(items, many=True)
-        return Response(cars.data)
+        response = Vehicle.get_all_instances()
+        return Response(response)
 
     @staticmethod
     def post(request: Request):
         """Creates new car instance"""
 
-        serializer = VehicleSerializer(data=request.data)
-        if serializer.is_valid():
-            serializer.save()
+        vehicle_raw = VehicleSerializer(data=request.data)
+        if vehicle_raw.is_valid():
+            vehicle_raw.save()
 
-        return Response(
-            {
+
+        response = {
                 'action': 'created',
-                'data': serializer.data,
-            }
-        )
+                'data': vehicle_raw.data,
+        }
+
+        return Response(response)
