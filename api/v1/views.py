@@ -19,7 +19,7 @@ class VehicleResource(APIView):
         if not vehicle_raw:
             return HttpResponseNotFound('Car with this UUID is not found')
         response = {
-            'data': Vehicle.serialize(vehicle_raw, False),
+            'data': VehicleSerializer.serialize(vehicle_raw, False),
             'metadata': {
                 'uuid': uuid,
             }
@@ -38,7 +38,7 @@ class VehicleResource(APIView):
         vehicle_raw.save()
 
         response = {
-            'data': Vehicle.serialize(vehicle_raw, False),
+            'data': VehicleSerializer.serialize(vehicle_raw, False),
             'metadata': {
                 'uuid': uuid,
             }
@@ -52,7 +52,15 @@ class VehicleEndpoint(APIView):
     @staticmethod
     def get(request: Request):
         """Get list of available car instances"""
-        response = Vehicle.get_all_instances()
+        vehicles = VehicleSerializer.serialize(
+            instance=Vehicle.get_all_instances(),
+            many=True,
+        )
+        response = {
+            'data': vehicles,
+            'items': len(vehicles),
+            'metadata': request.data,
+        }
         return Response(response)
 
     @staticmethod
