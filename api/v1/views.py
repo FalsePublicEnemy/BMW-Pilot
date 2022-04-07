@@ -63,6 +63,7 @@ class VehicleEndpoint(APIView):
         if vehicle_raw.is_valid():
             vehicle_raw.save()
 
+
         response = {
                 'action': 'created',
                 'data': vehicle_raw.data,
