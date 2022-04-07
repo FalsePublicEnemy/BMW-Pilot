@@ -31,15 +31,18 @@ class VehicleResource(APIView):
     def patch(request: Request, uuid: UUID) -> Response(dict):
         """Update car instance with new data"""
 
-        vehicle = Vehicle.objects.filter(UUID=uuid)
+        vehicle = list(Vehicle.objects.filter(id=uuid))[0]
         if not vehicle:
             return HttpResponseNotFound('Car with this UUID is not found')
 
-        vehicle = VehicleSerializer(data=request.data)
+        vehicle.update_fields(
+            obj=vehicle,
+            request=request,
+        )
         vehicle.save()
 
         response = {
-            'data': VehicleSerializer(list(vehicle)[0], many=False).data,
+            'data': VehicleSerializer(vehicle, many=False).data,
             'metadata': {
                 'uuid': uuid,
             }
