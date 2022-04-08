@@ -24,5 +24,6 @@ Backend:
 - Psycopg2, binary
 - Docker, Docker-compose
 - Git
+- GCP
 
 
