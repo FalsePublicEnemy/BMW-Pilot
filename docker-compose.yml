@@ -1,0 +1,26 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    restart:
+      always
+    environment:
+      POSTGRES_USER: client
+      POSTGRES_DB: bmw_pilot
+      POSTGRES_PASSWORD: qwer1234
+    volumes:
+      - postgres_data:/var/lib/posgresql/data
+  app:
+    build:
+      context: .
+    restart:
+      always
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./zuri:/zuri
+    command: python manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+volumes:
+  postgres_data:
