@@ -6,19 +6,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/Frame 2 (9).svg" sizes="any" type="image/svg+xml">
-    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="scrollbar.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        * {
+            font-family: 'Ubuntu Condensed', sans-serif;
+        }
+
+        .buy_now {
+            width: 170px;
+        }
+
+        img {
+            zoom: 25.5%;
+        }
+
+        .color {
+            pointer-events: initial;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+
+            border: 2px solid rgb(218, 218, 218);
+        }
+
+        .black {
+            background-color: #2C2C2C;
+            margin-left: 57px;
+        }
+
+        .purple {
+            background-color: #B6AEE5;
+        }
+
+        .black:after {
+            position: relative;
+            left: 9px;
+            bottom: 18px;
+            width: 5px;
+            height: 10px;
+            border: solid #ffff;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+            content: "";
+            display: block;
+        }
+    </style>
     <script>
         function langCheck() {
             var x = document.getElementById("lang").value;
             switch (x) {
                 case 'eng':
+                window.open('index.html', '_self');
                     break;
                 case 'rus':
-                    window.open('index-rus.html', '_self');
+                window.open('index-rus.html', '_self');
                     break;
                 case 'ukr':
-                    window.open('index-ukr.html', '_self');
                     break;
                 default:
                     break;
@@ -56,14 +106,14 @@
                         </svg>
 
                     </a></li>
-                <li><input type="search" placeholder="Search for something..." class="search" id="search_input"
+                <li><input type="search" placeholder="Що будемо шукати сьогодні..." class="search" id="search_input"
                         onclick="this.value='';" onkeyup="search();">
                     <div id="listing"></div>
                 </li>
                 <select id="lang" onchange="langCheck()" name="language" class="lang">
-                    <option value="eng">ENG</option>
-                    <option value="rus">РУС</option>
                     <option value="ukr">УКР</option>
+                    <option value="rus">РУС</option>
+                    <option value="eng">ENG</option>
                 </select>
                 <li>
                     <div class="cart" id="cart_btn" onclick="cart()">🛒 <span id="cartCounter">0</span></div>
@@ -77,9 +127,9 @@
         </div>
         <div class="footer">
             <div class="footer-cnt">
-                <span id="thx">Thank you for visiting us!</span>
+                <span id="thx">Дякуємо за шопінг з нами!</span>
                 <span>
-                    <a class="logo" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="336" height="114" fill="none"
+                    <a class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="336" height="114" fill="none"
                             viewBox="0 0 336 114">
                             <rect width="114" height="114" fill="url(#paint0_linear)" rx="10" />
                             <path fill="#414045"
@@ -103,56 +153,60 @@
                     </a>
                 </span>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1068.0226454601354!2d30.473856470318307!3d50.45599547840347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce80bb14c36b%3A0x31d104253e38d4e0!2z0KTQsNC60YPQu9GM0YLQtdGCINGW0L3RhNC-0YDQvNCw0YbRltC50L3QuNGFINGC0LXRhdC90L7Qu9C-0LPRltC5INCa0LjRl9Cy0YHRjNC60L7Qs9C-INC90LDRhtGW0L7QvdCw0LvRjNC90L7Qs9C-INGD0L3RltCy0LXRgNGB0LjRgtC10YLRgyDRltC80LXQvdGWINCi0LDRgNCw0YHQsCDQqNC10LLRh9C10L3QutCw!5e0!3m2!1sru!2sua!4v1638385262505!5m2!1sru!2sua" 
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.5354284609466!2d30.459886816484055!3d50.46837517947786!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cdcfe87ba57d%3A0x669ebf198692f84f!2sUNIT.%D0%A1ity!5e0!3m2!1sru!2sua!4v1630674299072!5m2!1sru!2sua"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="pushL"></div>
         <div class="pushR"></div>
         <div class="main">
             <div class="catGal">
                 <div class="homeCatalog">
-                    <h2>Categories</h2>
+                    <h2 style="font-family: 'Ubuntu Condensed', sans-serif;">Категорії</h2>
                 </div>
+
                 <div class="gallery" id="gal1">
 
                     <div onclick="window.open('iphone-12-black.html', '_self')" class="gallery2">
 
                         <img src="assets/iphone_black.png">
                         <div class="spans" id="iphone">
-                            <span style="font-weight: bold;">All New</span>
+                            <span style="font-weight: bold;">Найновіший</span>
                             <span>iPhone 12</span>
-                            <span style="font-size: 0.7em;">From <span> 43 999 &#8372;</span></span>
-                            <a href="#" onclick="cartAdd();addiPhone();" class="buy_now">Buy Now</a>
+                            <span style="font-size: 0.7em;">Від <span> 43 999 &#8372;</span></span>
+                            <a href="#" onclick="cartAdd();addiPhone();" class="buy_now">Придбати</a>
                         </div>
                     </div>
 
                 </div>
+
                 <div class="gallery" id="gal2">
 
                     <div class="gallery2">
 
                         <img src="assets/Pixel4a.png">
                         <div class="spans" id="pixel">
-                            <span style="font-weight: bold;">More For Less</span>
+                            <span style="font-weight: bold;">Більше. Дешевше.</span>
                             <span>Pixel 4a</span>
-                            <span style="font-size: 0.7em;">From <span> 10 999 &#8372;</span></span>
-                            <a onclick="cartAdd();addPixel();" class="buy_now">Buy Now</a>
+                            <span style="font-size: 0.7em;">Від <span> 10 999 &#8372;</span></span>
+                            <a onclick="cartAdd();addPixel();" class="buy_now">Придбати</a>
                         </div>
 
 
 
                     </div>
                 </div>
+                
                 <div class="gallery" id="gal3">
 
                     <div class="gallery2">
 
                         <img src="assets/Galaxy_Z_Flip.png">
                         <div class="spans" id="samsung">
-                            <span style="font-weight: bold;">Bend Your Wallet</span>
+                            <span style="font-weight: bold;">Зігни свій гаманець</span>
                             <span>Galaxy Z Flip</span>
-                            <span style="font-size: 0.7em;">From <span> 30 999 &#8372;</span></span>
-                            <a href="#" onclick="cartAdd();addGalaxy();" class="buy_now">Buy Now</a>
+                            <span style="font-size: 0.7em;">Від <span> 30 999 &#8372;</span></span>
+                            <a href="#" onclick="cartAdd();addGalaxy();" class="buy_now">Придбати</a>
                         </div>
 
 
@@ -169,7 +223,7 @@
 
                     <a href="phones.html">
                         <span>
-                            Phones
+                            Смартфони
                             <?xml version="1.0" encoding="iso-8859-1"?>
                             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -190,7 +244,7 @@
                     <div class="spacing"></div>
                     <a href="tablets.html">
                         <span>
-                            Tablets
+                            Планшети
                             <?xml version="1.0" encoding="iso-8859-1"?>
                             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +266,7 @@
                     <div class="spacing"></div>
                     <a href="laptops.html">
                         <span>
-                            Laptops
+                            Ноутбуки
                             <?xml version="1.0" encoding="iso-8859-1"?>
                             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -234,7 +288,7 @@
                     <div class="spacing"></div>
                     <a href="tv.html">
                         <span>
-                            Television
+                            Телевізори
                             <?xml version="1.0" encoding="iso-8859-1"?>
                             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +310,7 @@
                     <div class="spacing"></div>
                     <a href="accessories.html">
                         <span>
-                            Accessories
+                            Аксесуари
                             <?xml version="1.0" encoding="iso-8859-1"?>
                             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -276,9 +330,9 @@
                     </a>
 
                     <div class="spacing"></div>
-                    <a href="browse-all.html">
+                    <a href="">
                         <span>
-                            Browse all
+                            Показати все
                             <?xml version="1.0" encoding="iso-8859-1"?>
                             <!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
@@ -300,7 +354,7 @@
             </div>
             <div id="deals">
                 <span>
-                    Best Deals
+                    Гарячі пропозиції
                     <svg id="Layer_1" enable-background="new 0 0 512.009 512.009" height="512"
                         viewBox="0 0 512.009 512.009" width="512" xmlns="http://www.w3.org/2000/svg">
                         <g>
@@ -372,8 +426,8 @@
                                     <span>iPad Pro 5</span>
                                     <span style="font-size: 1em;" id="deals_name"> <strike>38 999
                                             &#8372;</strike></span>
-                                    <span style="font-size: 1.5em;" id="deals_price"> 30 399 &#8372;</span>
-                                    <a href="#" onclick="cartAdd();addiPad();" class="buy_now">Buy Now</a>
+                                    <span style="font-size: 1.5em;" id="deals_price"> 32 399 &#8372;</span>
+                                    <a href="#" onclick="cartAdd();addiPad();" class="buy_now">Придбати</a>
                                 </div>
                             </div>
                         </div>
@@ -384,17 +438,18 @@
                     <a href="samsung-tv.html">
                     <div class="phone3">
                         <div class="tile small">
+
                             <div class="item">
                                 <div class="img">
-                                    <img src="assets/Samsung_QE75Q95T.png">
+                                    <img src="assets/xiaomi-tv.png">
                                 </div>
-                                <div style="text-align: center;" class="name">SAMSUNG QLED
-                                    QE75Q950T</div>
+                                <div style="text-align: center;" class="name">Xiaomi Mi LED</div>
                                 <div class="price">
                                     <div class="prices">
                                         <!-- <span style="visibility: hidden; font-size: 0.95em; font-weight: normal; color: rgb(97, 97, 97); text-decoration: line-through; margin-left: 2px;">22 999 &#8372;</span> -->
                                         <span style="text-align: center;">
-                                            60 999 &#8372;
+                                            10 999 &#8372;
+                                            <span class="discount">Now available!</span>
                                         </span>
                                     </div>
                                 </div>
@@ -438,7 +493,7 @@
                                 <span>Watch S6</span>
                                 <span style="font-size: 1em;" id="deals_name"><strike>15 199 &#8372;</strike></span>
                                 <span style="font-size: 1.5em;" id="deals_price"> 13 499 &#8372;</span>
-                                <a href="#" onclick="cartAdd();addWatchS6();" class="buy_now">Buy Now</a>
+                                <a href="#" onclick="cartAdd();addWatchS6();" class="buy_now">Придбати</a>
                             </div>
                         </div>
                     </div>

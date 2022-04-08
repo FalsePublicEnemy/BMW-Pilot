@@ -11,3 +11,9 @@ class Vehicle(models.Model, BaseModel):
     created_at = models.DateTimeField(auto_now_add=True)
 
     # TODO: prove specs for car. What's needed to be shown in description
+
+
+class Test(models.Model):
+    name = models.CharField(max_length=100)
+
+
