@@ -1,10 +1,10 @@
 static/
 base/migrations/
 base/__pycache__/
-website/__pycache__/
+website/__pycache__
 website/migrations/__pycache__/
 website/templates
-# Remove when static is done
 
+*.pyc
 
 website/.DS_Store
