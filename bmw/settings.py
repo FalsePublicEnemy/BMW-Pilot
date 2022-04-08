@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'bmw_pilot',
         'USER': 'client',
         'PASSWORD': 'qwer1234',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '5432',
     }
 }
