@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.request import Request
 from rest_framework.views import APIView
 
-from api.v1.serializers import VehicleSerializer, TestSerializer
+from api.v1.serializers import VehicleSerializer
 from base.models import Vehicle
 
 
@@ -70,9 +70,6 @@ class VehicleEndpoint(APIView):
         vehicle_raw = VehicleSerializer(data=request.data)
         if vehicle_raw.is_valid():
             vehicle_raw.save()
-
-
-
 
         response = {
                 'action': 'created',
