@@ -12,8 +12,3 @@ class Vehicle(models.Model, BaseModel):
 
     # TODO: prove specs for car. What's needed to be shown in description
 
-
-class Test(models.Model):
-    name = models.CharField(max_length=100)
-
-
