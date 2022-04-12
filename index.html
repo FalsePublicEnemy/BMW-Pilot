@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id='main'>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>BMW</title>
+
+    <!-- Css -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body id='main'>
+<!-- 
+    <nav id='main' class="navbar navbar-default navbar-fixed-top">
+        <a class="navbar-brand top" class="openbtn" onclick="openNav()">
+            <img class='logo' src="img/logo.png" alt="">
+        </a>
+    </nav> -->
+
+
+
+
+    <!-- Intro -->
+    <section class="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 big-letter">
+                    <p class="title">Двигун внутрішнього згоряння</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container about">
+            <div class="row">
+                    <p>Двигун / рушій внутрішнього згоряння — тип двигуна, теплова машина, в якій хімічна енергія палива, що згоряє в робочій зоні, перетворюється на механічну роботу. ККД = 10-42 %.</p>
+            </div>
+        </div>
+    </section>
+
+     <!-- About -->
+     <section class="about" id="about">
+        <div class="container about">
+            <div class="row">
+                <div class="col-md-6" id="engine", style="margin: auto;display:block;text-align: center;"></div>
+                <p style="text-align: center;">Модель двигуна</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container about">
+            <div class="row">
+                <div class="col-md-6 big-letter">
+                    <p>
+                        Нарівні з електричним двигуном двигун внутрішнього згоряння є одним із найпоширеніших типів двигунів. Найчастіше він використовується у транспортних засобах: автомобілях, мотоциклах, поїздах, авіації, водному транспорті тощо. Двигуни внутрішнього згоряння застосовуються також в автономних електричних генераторах для виробництва електроенергії.
+                    </p>
+                    <br>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        Найекономічнішими є поршневі двигуни внутрішнього згоряння. Основним недоліком цих двигунів є наявність корбово-хитневого механізму, що ускладнює конструкцію й обмежує можливість підвищення частоти обертання.
+                    </p>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Copyright -->
+    <footer>
+        <div class="container">
+            <p class="text-center">© 2022 - Made & Designed by Karim Nassar, Melnyk Maksym & Ryeznikova Anna</p>
+        </div>
+    </footer>
+
+    <a href="#page-top" class="cd-top">Top</a>
+
+
+    <!-- script -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/script.js"></script>
+
+    <script src="js/renderers/three.min.js"></script>
+    <script src="js/renderers/OrbitControls.js"></script>
+    <script src="js/renderers/GLTFLoader.js"></script>
+    <script src="js/renderers/index.js"></script>
+
+    <script>
+        $("engine").ready(function(){render_3d_model('engine')});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+name: ssh pull
+on:
+  push:
+    branches:
+    - master
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ls -a via OPEN SSH Private Key
+        uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd website
+            git pull
+            screen -ls | grep website | cut -d. -f1 | awk '{print $1}' | xargs kill
+            screen -d -m -S 'website' sudo node start.js
+            exit 0
+          host: ${{ secrets.HOST }}
+          user: website
+          key: ${{ secrets.PRIVATE_KEY}}
+          args: "-tt -vvv"
