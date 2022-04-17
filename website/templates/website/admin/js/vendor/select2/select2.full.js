@@ -711,7 +711,7 @@ S2.define('select2/utils',[
 
   Utils.hasScroll = function (index, el) {
     // Adapted from the function created by @ShadowScripter
-    // and adapted by @BillBarry on the Stack Exchange Code Review website_old.
+    // and adapted by @BillBarry on the Stack Exchange Code Review website.
     // The original code can be found at
     // http://codereview.stackexchange.com/q/13338
     // and was designed to be used with the Sizzle selector engine.

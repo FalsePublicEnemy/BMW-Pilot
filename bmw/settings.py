@@ -129,9 +129,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/Users/karimnassar/Desktop/BMW/static/'
+STATIC_URL = 'website/templates/website/'
+STATIC_ROOT = 'website/templates/website/'
 
-STATIC_ROOT = '/Users/karimnassar/Desktop/BMW/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'website/templates/website/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
