@@ -3,7 +3,7 @@ base/migrations/
 base/__pycache__/
 website/__pycache__
 website/migrations/__pycache__/
-website/templates
+
 
 *.pyc
 

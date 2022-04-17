@@ -1,8 +1,9 @@
 from django.urls import path, re_path
 
-from website import views
+from website.views import MainPage
 
 
 urlpatterns = [
-    path('info/<uuid>', views.index)
+    path('', MainPage.home),
+    path('/features', MainPage.features),
 ]
