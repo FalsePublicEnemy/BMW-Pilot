@@ -8,5 +8,8 @@ from website.views import MainPage
 
 urlpatterns = [
     path('', MainPage.home),
-    path('/features', MainPage.features),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('features', MainPage.features),
+] + static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    )

@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 class MainPage:
-    def home(request, template='website/home.html'):
+    def home(request, template='home.html'):
         
         return render(
             request=request,
