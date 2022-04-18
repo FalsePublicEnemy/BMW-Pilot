@@ -1,4 +1,4 @@
-static/
+
 base/migrations/
 base/__pycache__/
 website/__pycache__
@@ -7,5 +7,5 @@ website/migrations/__pycache__/
 
 *.pyc
 
-website/.DS_Store
-website/templates/wtf_static
+
+website/templates/
