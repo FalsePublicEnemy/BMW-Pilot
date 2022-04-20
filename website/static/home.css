@@ -33,27 +33,97 @@ body {
     border-bottom:5px solid whitesmoke;
     right: 35px;
     position: absolute;
+    border-radius: 5px;
 }
 .top-line-vertical {
     border-left: 5px solid whitesmoke;
     height: 500px;
     right: 35px;
     position: absolute;
+    border-radius: 5px;
 }
 .top-line-small {
     border-left: 5px solid whitesmoke;
     height: 90px;
     right: 120px;
     position: absolute;
+    border-radius: 5px;
 }
 .welcome-text {
     color: white;
     font-size: 70px;
     text-align: left;
-    line-height: 3cm;
+    line-height: 2cm;
     text-indent: 5mm;    
-
+    position: absolute;
+    top: 250px;
+    text-shadow: 2px 2px #000000;
 }
+.main-button-box { 
+    position: absolute; 
+    background-color: #66A182; 
+    top:650px;
+    left: 20px;
+
+    width: 100%; 
+    display: flex;
+}
+.main-button {
+    color: #FFF;
+    transition: all 0.5s;
+    width: 500px;
+    text-align: center;
+    font-size: 50px;
+    position: absolute;
+}
+.main-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(181, 181, 181, 0.3);
+    transition: all 0.3s;
+}
+.main-button:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+}
+.main-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+}
+.main-button:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+}
+
+
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
 
 .hyperlink-top {
     position: absolute;
@@ -69,4 +139,13 @@ body {
 }
 .hyperlink-top:hover{
     color: white;
+}
+
+.bottom-picture-left {
+    max-width: 50%;
+
+}
+.bottom-picture-right {
+    max-width: 50%;
+
 }
